@@ -169,3 +169,16 @@ body.web #main .content, body.web #sbList, body.web .modal, body.web .popover, b
 body.web.sheet-open .task.open { zoom: var(--ts, 1); }
 @media (max-width: 760px) { body.web #sidebar { transition: transform .22s ease; } body.web:not(.no-sidebar) #sidebar { animation: drawer-in .22s ease; } }
 @keyframes drawer-in { from { transform: translateX(-100%); } to { transform: none; } }
+@media (max-width: 760px) {
+  /* the to-do sheet: Done sits in the corner so the title gets the full width */
+  body.web.sheet-open .task.open { padding-top: 46px; }
+  body.web.sheet-open .task.open .e-done { position: absolute; top: 10px; right: 12px; }
+  body.web .e-tools { flex-wrap: wrap; row-gap: 4px; }
+  /* calendar: "To schedule" sits above the day as a sideways strip */
+  body.web .wk-body { flex-direction: column-reverse; }
+  body.web .wk-side { flex-direction: row; overflow-x: auto; overflow-y: hidden; padding: 8px; gap: 8px; align-items: stretch; flex-wrap: nowrap; }
+  body.web .wk-side > .pg-h, body.web .wk-side > .faint { display: none; }
+  body.web .wk-side .wk-task.side { flex: 0 0 auto; max-width: 170px; }
+  /* Upcoming: folded empty days are a thin line */
+  body.web .section:has(> .sec-title) .sec-title:only-child { opacity: .7; }
+}
