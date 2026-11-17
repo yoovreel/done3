@@ -182,3 +182,32 @@ body.web.sheet-open .task.open { zoom: var(--ts, 1); }
   /* Upcoming: folded empty days are a thin line */
   body.web .section:has(> .sec-title) .sec-title:only-child { opacity: .7; }
 }
+
+/* ---- passcode lock ---- */
+html.lk-hide body { visibility: hidden; }
+html.lk-blur body { filter: blur(24px); }
+#lockScreen { position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; background: var(--bg, #f6f6f4); color: var(--text, #222); transition: opacity .2s; padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom); }
+#lockScreen.out { opacity: 0; pointer-events: none; }
+.lk-in { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; max-width: 320px; }
+.lk-ic { font-size: 34px; }
+.lk-t { font-size: 20px; font-weight: 600; }
+.lk-sub, .lk-msg { font-size: 15px; opacity: .7; min-height: 20px; text-align: center; }
+.lk-msg { color: #d9534f; opacity: 1; }
+.lk-ask .lk-msg { color: inherit; opacity: .75; }
+.lk-dots { display: flex; gap: 16px; margin: 10px 0 18px; justify-content: center; }
+.lk-dots i { width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid currentColor; opacity: .7; }
+.lk-dots i.on { background: currentColor; opacity: 1; }
+.lk-dots.shake { animation: lkshake .35s; }
+@keyframes lkshake { 20%,60% { transform: translateX(-10px); } 40%,80% { transform: translateX(10px); } }
+.lk-pad { display: grid; grid-template-columns: repeat(3, 76px); gap: 16px 24px; justify-content: center; }
+.lk-pad button { width: 76px; height: 76px; border-radius: 50%; border: none; font-size: 30px; font-weight: 400; background: rgba(127,127,127,.16); color: inherit; -webkit-tap-highlight-color: transparent; }
+.lk-pad button:active { background: rgba(127,127,127,.38); }
+.lk-pad .lk-face, .lk-pad .lk-del { background: none; font-size: 15px; }
+.lk-pad .lk-del { font-size: 24px; }
+.lk-forgot { margin-top: 18px; background: none; border: none; color: var(--accent, #3478f6); font-size: 15px; }
+.lk-ask { display: flex; flex-direction: column; align-items: center; }
+.lk-ask .lk-pad { grid-template-columns: repeat(3, 64px); gap: 12px 20px; }
+.lk-ask .lk-pad button { width: 64px; height: 64px; font-size: 26px; }
+.lock-box .row { flex-wrap: wrap; }
+@media (prefers-color-scheme: dark) { #lockScreen { background: var(--bg, #1c1c1e); color: var(--text, #eee); } }
+.lk-ask .lk-pad button:last-child { background: none; }
