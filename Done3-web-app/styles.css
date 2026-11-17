@@ -510,7 +510,7 @@ kbd { font: 12px ui-monospace, "SF Mono", Menlo, monospace; background: var(--ho
 .bar-f { width: 100%; max-width: 38px; border-radius: 7px 7px 3px 3px; background: color-mix(in srgb, var(--accent) 45%, transparent); max-height: 78%; }
 .bar.hit .bar-f { background: #30a46c; } .bar.off .bar-f { opacity: .45; }
 .bar-n { font-size: 11px; color: var(--muted); min-height: 15px; } .bar-l { font-size: 11px; color: var(--muted); margin-top: 4px; height: 16px; white-space: nowrap; }
-.goal-line { position: absolute; left: 16px; right: 16px; border-top: 1.5px dashed #30a46c88; pointer-events: none; }
+.bars { position: relative; } .goal-line { position: absolute; left: 0; right: 0; border-top: 1.5px dashed #30a46c88; pointer-events: none; }
 .pg-insight { display: flex; gap: 8px; align-items: center; color: var(--text-2); } .pg-insight svg { color: #f5b400; flex: none; }
 .pg-goals .gl { display: flex; align-items: center; gap: 10px; margin: 6px 0; } .pg-goals .gl > span:first-child { width: 90px; color: var(--text-2); }
 .pg-goals .field.small { width: 70px; }
@@ -609,3 +609,12 @@ body.web .ac-row { min-height: 44px; font-size: 15.5px; }
 .m-late { color: #d13438; font-size: 11.5px; }
 .late-btn { color: #d13438 !important; }
 .demo-btn { margin: 0 auto 18px; display: block; padding: 9px 18px; font-size: 14px; }
+.ctx-title { padding: 8px 12px 4px; font-weight: 600; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ctx-quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 6px; }
+.ctx-q { display: flex; flex-direction: column; align-items: center; gap: 4px; border: 0; border-radius: 12px; background: var(--hover); padding: 10px 4px; font-size: 12px; color: var(--text); }
+.ctx-q .ci svg { width: 20px; height: 20px; }
+.task.selmode .cb { border-radius: 50%; }
+.task.selmode.sel .cb { background: var(--accent); border-color: var(--accent); }
+.task.selmode.sel .cb::after { content: ""; position: absolute; left: 7px; top: 3px; width: 5px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+#bottom.selbar { gap: 6px; align-items: center; }
+.sel-n { flex: 1; text-align: center; font-weight: 600; font-size: 13.5px; }
