@@ -606,3 +606,5 @@ body.web .ac-row { min-height: 44px; font-size: 15.5px; }
 .scan-video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .scan-box { position: absolute; inset: 18%; border: 3px solid rgba(255,255,255,.9); border-radius: 18px; box-shadow: 0 0 0 999px rgba(0,0,0,.25); }
 .qr-wrap .pill { white-space: nowrap; flex: none; }
+.m-late { color: #d13438; font-size: 11.5px; }
+.late-btn { color: #d13438 !important; }
