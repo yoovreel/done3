@@ -753,3 +753,17 @@ body.web .ac-row { min-height: 44px; font-size: 15.5px; }
 .wk-corner.wk-adc, .wk-allday { top: 78px; }
 .wk-side > *, .wk-allday > * { flex-shrink: 0; }
 .wk-dcard .wk-load { top: auto; bottom: 5px; right: 5px; }
+/* bigger mini month */
+.wk-side { flex-basis: 300px; padding: 14px; }
+.mm-head b { font-size: 16px; }
+.mm-head .mm-today { margin-right: 4px; padding: 3px 10px; font-size: 12px; }
+.mm-head .icon-btn.tiny { width: 28px; height: 28px; font-size: 18px; }
+.mm-grid { gap: 4px; }
+.mm-wd { font-size: 11.5px; font-weight: 600; }
+.mm-d { height: 36px; font-size: 14px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0; }
+.mm-d.today { border-radius: 10px; }
+.mm-d.busy::after { display: none; }
+.mm-n { font-style: normal; font-size: 9px; font-weight: 700; line-height: 1; color: #fff; background: #f59e5b; border-radius: 99px; padding: 1px 4px; margin-top: 1px; }
+.mm-d.today .mm-n { background: #fff; color: #0f8f80; }
+.mm-d.drop { background: color-mix(in srgb, #12a594 30%, transparent); box-shadow: inset 0 0 0 2px #12a594; }
+.mm-tip { margin-top: 8px; line-height: 1.35; }
