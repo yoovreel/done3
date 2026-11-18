@@ -829,3 +829,31 @@ body.web .ac-row { min-height: 44px; font-size: 15.5px; }
 }
 .seg.cal-seg button { width: auto; height: 34px; padding: 0 14px; }
 .seg.cal-seg button.on { background: var(--card); }
+/* smarter plan my day */
+.plan2 { display: flex; flex-direction: column; gap: 10px; }
+.p2-hours { display: flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--text-2); flex-wrap: wrap; }
+.p2-hours .field { width: auto; }
+.p2-line { display: flex; flex-direction: column; gap: 6px; max-height: 52vh; overflow: auto; padding: 2px; }
+.p2-row { display: grid; grid-template-columns: 70px 20px 1fr auto; align-items: center; gap: 8px; padding: 9px 12px; border-radius: 12px; font-size: 14px; }
+.p2-row.todo { --tint: #12a594; background: color-mix(in srgb, var(--tint) 16%, var(--card)); box-shadow: inset 3px 0 0 var(--tint); cursor: pointer; }
+.p2-row.todo.off { opacity: .45; }
+.p2-row.busy { --ev: #8d8d8d; background: repeating-linear-gradient(135deg, var(--hover) 0 6px, transparent 6px 12px); color: var(--muted); }
+.p2-row.busy .p2-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ev); justify-self: center; }
+.p2-time { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 13px; color: var(--text-2); }
+.p2-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
+.p2-row.todo .p2-t { color: color-mix(in srgb, var(--tint) 45%, var(--text)); font-weight: 600; }
+.p2-d { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.p2-new { margin-left: 6px; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; background: #f59e5b; color: #fff; border-radius: 99px; padding: 1px 6px; vertical-align: 1px; }
+.p2-left { font-size: 13px; color: var(--text-2); background: var(--hover); border-radius: 10px; padding: 8px 12px; }
+/* goals on Today */
+.goal-strip { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px; margin: 0 0 6px; scrollbar-width: none; }
+.goal-strip::-webkit-scrollbar { display: none; }
+.gs-chip { --tint: #8b7cf6; flex: none; display: flex; align-items: center; gap: 8px; padding: 6px 6px 6px 10px; border-radius: 14px; background: color-mix(in srgb, var(--tint) 15%, var(--card)); border: 1px solid color-mix(in srgb, var(--tint) 24%, transparent); cursor: pointer; }
+.gs-emo { font-size: 17px; }
+.gs-mid { display: flex; flex-direction: column; gap: 3px; min-width: 84px; }
+.gs-t { font-size: 12.5px; font-weight: 600; color: color-mix(in srgb, var(--tint) 55%, var(--text)); white-space: nowrap; max-width: 150px; overflow: hidden; text-overflow: ellipsis; }
+.gs-bar { height: 5px; border-radius: 99px; background: color-mix(in srgb, var(--tint) 22%, transparent); overflow: hidden; } .gs-bar i { display: block; height: 100%; background: var(--tint); border-radius: 99px; }
+.gs-n { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.gs-plus { border: none; background: var(--tint); color: #fff; font: inherit; font-weight: 700; font-size: 12.5px; border-radius: 10px; min-width: 36px; height: 32px; padding: 0 8px; cursor: pointer; }
+.push-box { margin-top: 10px; } .push-h { font-weight: 600; font-size: 13.5px; margin-bottom: 6px; } .hint.ok { color: #2f9e6a; }
+.p2-t { display: flex; align-items: center; min-width: 0; } .p2-tt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; } .p2-new { flex: none; }
