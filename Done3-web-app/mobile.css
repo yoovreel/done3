@@ -44,9 +44,6 @@ body.web .drag { -webkit-app-region: none; }
   body.web .ring { min-width: 0; }
   body.web .pg-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   /* calendar: the "to schedule" list goes under the week */
-  body.web .wk-body { flex-direction: column; }
-  body.web .wk-side { flex-basis: auto; width: 100%; max-height: none; }
-  body.web .wk-scroll { max-height: 62dvh; width: 100%; }
   body.web #focusBox { bottom: calc(76px + env(safe-area-inset-bottom)); right: 12px; left: 12px; max-width: none; }
   body.web #toast { bottom: calc(80px + env(safe-area-inset-bottom)); }
   body.web .tour-card { width: calc(100vw - 32px); left: 16px !important; }
@@ -102,17 +99,6 @@ body.web .drag { -webkit-app-region: none; }
   body.web #toast { max-width: calc(100vw - 32px); z-index: 55; }
   body.web #toast span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   /* calendar: three days, no boxes inside boxes */
-  body.web .wk-nav { flex-wrap: nowrap; }
-  body.web .wk-nav .pill { min-width: 40px; min-height: 40px; }
-  body.web .wk-range { white-space: nowrap; font-size: 14px; margin-left: 4px; overflow: hidden; text-overflow: ellipsis; }
-  body.web .wk-scroll { max-height: none; overflow: visible; border-radius: 12px; }
-  body.web .wk-grid { min-width: 0 !important; }
-  body.web .wk-dh { font-size: 12px; padding: 8px 4px 6px; flex-wrap: wrap; row-gap: 2px; }
-  body.web .wk-load { margin-left: 0; }
-  body.web .wk-corner, body.web .wk-dh { top: 0; }
-  body.web .wk-hl:first-child { transform: none; }
-  body.web .wk-side { margin-top: 4px; }
-  body.web .wk-task.side { min-height: 40px; justify-content: center; }
   /* progress */
   body.web .bars { gap: 6px; } body.web .bars.weeks .bar-l { font-size: 9.5px; }
   /* readable grey text (WCAG AA) */
@@ -160,9 +146,6 @@ body.web .task.swiping { padding: 0 !important; }
 @keyframes sheet-up { from { transform: translateY(100%); } to { transform: none; } }
 @keyframes shade-in { from { opacity: 0; } to { opacity: 1; } }
 @media (max-width: 760px) {
-  body.web .wk-seg { margin-left: auto; flex: none; } body.web .wk-seg button { width: 34px; height: 32px; font-weight: 600; font-size: 13px; }
-  body.web .wk-scroll { touch-action: pan-y; }
-  body.web .wk-grid { will-change: transform; }
 }
 /* text size for browsers without iOS text-size-adjust (the iPhone itself uses -webkit-text-size-adjust) */
 body.web #main .content, body.web #sbList, body.web .modal, body.web .popover, body.web .ctx, body.web .ac-box { zoom: var(--ts, 1); }
@@ -175,10 +158,6 @@ body.web.sheet-open .task.open { zoom: var(--ts, 1); }
   body.web.sheet-open .task.open .e-done { position: absolute; top: 10px; right: 12px; }
   body.web .e-tools { flex-wrap: wrap; row-gap: 4px; }
   /* calendar: "To schedule" sits above the day as a sideways strip */
-  body.web .wk-body { flex-direction: column-reverse; }
-  body.web .wk-side { flex-direction: row; overflow-x: auto; overflow-y: hidden; padding: 8px; gap: 8px; align-items: stretch; flex-wrap: nowrap; }
-  body.web .wk-side > .pg-h, body.web .wk-side > .faint { display: none; }
-  body.web .wk-side .wk-task.side { flex: 0 0 auto; max-width: 170px; }
   /* Upcoming: folded empty days are a thin line */
   body.web .section:has(> .sec-title) .sec-title:only-child { opacity: .7; }
 }
