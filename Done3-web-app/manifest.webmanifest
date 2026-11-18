@@ -1,6 +1,6 @@
 {
-  "name": "Done 3",
-  "short_name": "Done 3",
+  "name": "Done",
+  "short_name": "Done",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

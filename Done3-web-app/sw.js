@@ -1,6 +1,6 @@
-// Keeps Done 3 working offline. Online, it always fetches the newest version first (so you're always up to date);
+// Keeps Done working offline. Online, it always fetches the newest version first (so you're always up to date);
 // offline, it uses the last copy it saved.
-const CACHE = 'done3-v11';
+const CACHE = 'done3-v12';
 const SHELL = ['./', 'index.html', 'bundle.js', 'styles.css', 'mobile.css', 'manifest.webmanifest', 'icon-180.png', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
@@ -11,14 +11,14 @@ self.addEventListener('fetch', e => {
     .catch(() => caches.match(e.request).then(r => r || caches.match('index.html'))));
 });
 
-// tapping a notification opens Done 3
+// tapping a notification opens Done
 self.addEventListener('notificationclick', e => {
   e.notification.close();
   e.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(cs => cs.length ? cs[0].focus() : self.clients.openWindow('./')));
 });
 
-// a reminder sent by your Mac while Done 3 is closed (end-to-end encrypted; the browser decrypts it)
+// a reminder sent by your Mac while Done is closed (end-to-end encrypted; the browser decrypts it)
 self.addEventListener('push', e => {
-  let m = {}; try { m = e.data ? e.data.json() : {}; } catch { m = { title: e.data ? e.data.text() : 'Done 3' }; }
-  e.waitUntil(self.registration.showNotification(m.title || 'Done 3', { body: m.body || '', tag: m.tag || undefined, icon: 'icon-192.png', badge: 'icon-192.png', data: { id: m.tag || '' } }));
+  let m = {}; try { m = e.data ? e.data.json() : {}; } catch { m = { title: e.data ? e.data.text() : 'Done' }; }
+  e.waitUntil(self.registration.showNotification(m.title || 'Done', { body: m.body || '', tag: m.tag || undefined, icon: 'icon-192.png', badge: 'icon-192.png', data: { id: m.tag || '' } }));
 });
