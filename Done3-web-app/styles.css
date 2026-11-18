@@ -857,3 +857,67 @@ body.web .ac-row { min-height: 44px; font-size: 15.5px; }
 .gs-plus { border: none; background: var(--tint); color: #fff; font: inherit; font-weight: 700; font-size: 12.5px; border-radius: 10px; min-width: 36px; height: 32px; padding: 0 8px; cursor: pointer; }
 .push-box { margin-top: 10px; } .push-h { font-weight: 600; font-size: 13.5px; margin-bottom: 6px; } .hint.ok { color: #2f9e6a; }
 .p2-t { display: flex; align-items: center; min-width: 0; } .p2-tt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; } .p2-new { flex: none; }
+
+/* ================= Mac calendar: Apple Calendar look (light, thin, full height) ================= */
+.wk:not(.wk-phone) { gap: 10px; padding-bottom: 0; }
+.wk:not(.wk-phone) .cal-title { font-size: 26px; font-weight: 700; letter-spacing: -.4px; }
+.wk:not(.wk-phone) .cal-nav, .wk:not(.wk-phone) .cal-seg { background: var(--hover); border-radius: 8px; padding: 2px; }
+.wk:not(.wk-phone) .cal-arrow { width: 28px; height: 26px; font-size: 18px; border-radius: 6px; }
+.wk:not(.wk-phone) .cal-today, .wk:not(.wk-phone) .seg.cal-seg button { height: 26px; font-size: 12.5px; border-radius: 6px; padding: 0 12px; }
+.wk:not(.wk-phone) .cal-today.on { color: var(--text); }
+.wk:not(.wk-phone) .wk-body { gap: 0; align-items: stretch; }
+.wk:not(.wk-phone) .wk-scroll { max-height: none; height: calc(100vh - 150px); border-radius: 0; box-shadow: none; border-top: 1px solid var(--border); background: var(--bg); }
+.wk:not(.wk-phone) .wk-grid { background: var(--bg); }
+.wk:not(.wk-phone) .wk-corner { background: var(--bg); border-bottom: 1px solid var(--border); }
+.wk-dh.ap { flex-direction: row; align-items: baseline; justify-content: flex-end; gap: 4px; padding: 8px 8px 6px; height: auto; background: var(--bg); border-bottom: 1px solid var(--border); border-left: 1px solid var(--border); }
+.wk-dh.ap .wk-wd { font-size: 13px; font-weight: 400; text-transform: none; letter-spacing: 0; color: var(--text-2); order: 1; }
+.wk-dh.ap .wk-num { order: 2; width: auto; height: auto; min-width: 22px; font-size: 18px !important; font-weight: 400 !important; padding: 0 5px !important; border-radius: 99px; color: var(--text) !important; display: inline-flex; line-height: 26px; }
+.wk-dh.ap.today .wk-wd { color: #e5484d; font-weight: 600; }
+.wk-dh.ap.today .wk-num { background: #e5484d !important; color: #fff !important; font-weight: 600 !important; }
+.wk-dh.ap .wk-load { order: 0; margin-right: auto; font-size: 10.5px; background: none; color: var(--muted); padding: 0; }
+.wk-dh.ap.we, .wk:not(.wk-phone) .wk-col.we { background-color: color-mix(in srgb, var(--hover) 60%, var(--bg)); }
+.wk:not(.wk-phone) .wk-corner.wk-adc { font-size: 10px; padding: 6px 6px 0 0; background: var(--bg); }
+.wk:not(.wk-phone) .wk-allday { background: var(--bg); border-left: 1px solid var(--border); padding: 3px; gap: 2px; min-height: 24px; }
+.wk:not(.wk-phone) .wk-allday .wk-task { padding: 2px 6px; border-radius: 4px; font-size: 11.5px; gap: 0; }
+.wk:not(.wk-phone) .wk-allday .wk-task b, .wk:not(.wk-phone) .wk-allday .wk-task .wk-tt { font-size: 11.5px; font-weight: 500; }
+.wk:not(.wk-phone) .wk-allday .wk-task span { display: none; }
+.wk:not(.wk-phone) .wk-ev.all { padding: 2px 6px; border-radius: 4px; font-size: 11.5px; font-weight: 500; }
+.wk:not(.wk-phone) .wk-dl { font-size: 11px; font-weight: 500; padding: 1px 4px; border-radius: 4px; background: none; }
+.wk:not(.wk-phone) .wk-more { font-size: 11px; padding: 0 4px; color: var(--muted); font-weight: 500; }
+.wk:not(.wk-phone) .wk-hl { font-size: 10.5px; padding-right: 8px; }
+.wk:not(.wk-phone) .wk-hl span { background: var(--bg); top: -7px; }
+.wk:not(.wk-phone) .wk-col { border-left: 1px solid var(--border); background-color: var(--bg); background-image: repeating-linear-gradient(transparent 0, transparent calc(var(--hp) - 1px), color-mix(in srgb, var(--border) 80%, transparent) calc(var(--hp) - 1px), color-mix(in srgb, var(--border) 80%, transparent) var(--hp)); }
+.wk:not(.wk-phone) .wk-col.today { background-color: var(--bg); }
+.wk:not(.wk-phone) .wk-ev, .wk:not(.wk-phone) .wk-task.timed { border-radius: 5px; padding: 3px 6px; gap: 1px; font-size: 11.5px; box-shadow: none; border-left: 3px solid var(--ev, var(--tint)); }
+.wk:not(.wk-phone) .wk-task.timed { border-left-color: var(--tint); background: color-mix(in srgb, var(--tint) 18%, var(--bg)); }
+.wk:not(.wk-phone) .wk-ev { background: color-mix(in srgb, var(--ev) 18%, var(--bg)); }
+.wk:not(.wk-phone) .wk-ev b, .wk:not(.wk-phone) .wk-task.timed .wk-tt { font-size: 11.5px; font-weight: 600; -webkit-line-clamp: 2; }
+.wk:not(.wk-phone) .wk-evt, .wk:not(.wk-phone) .wk-task.timed .wk-tm { font-size: 10.5px; }
+.wk:not(.wk-phone) .wk-evt svg { display: none; }
+.wk:not(.wk-phone) .wk-task.short, .wk:not(.wk-phone) .wk-ev.short { padding: 1px 6px; gap: 6px; }
+.wk:not(.wk-phone) .wk-task.stacked, .wk:not(.wk-phone) .wk-ev.stacked { outline: 1px solid var(--bg); }
+.wk:not(.wk-phone) .wk-task.pri1, .wk:not(.wk-phone) .wk-task.pri2, .wk:not(.wk-phone) .wk-task.pri3 { box-shadow: none; }
+.wk:not(.wk-phone) .wk-now { border-top: 1.5px solid #e5484d; }
+.wk:not(.wk-phone) .wk-now::before { width: 8px; height: 8px; left: -4px; top: -5px; }
+.wk-nowl { position: absolute; right: 4px; transform: translateY(-50%); font-size: 10px; font-weight: 600; color: #e5484d; background: var(--bg); padding: 0 2px; z-index: 6; }
+.wk-phone .wk-nowl { background: var(--card); }
+.wk:not(.wk-phone) .wk-side { flex: 0 0 248px; border-radius: 0; box-shadow: none; background: var(--bg-side); border-left: 1px solid var(--border); border-top: 1px solid var(--border); max-height: none; height: calc(100vh - 150px); padding: 12px; gap: 8px; }
+.wk:not(.wk-phone) .mm-head b { font-size: 13px; }
+.wk:not(.wk-phone) .mm-d { height: 26px; font-size: 11.5px; border-radius: 50%; }
+.wk:not(.wk-phone) .mm-d.inwk { border-radius: 4px; background: color-mix(in srgb, var(--text) 7%, transparent); }
+.wk:not(.wk-phone) .mm-d.today { background: #e5484d; border-radius: 50%; }
+.wk:not(.wk-phone) .mm-n { font-size: 0; width: 4px; height: 4px; padding: 0; background: var(--muted); margin-top: 0; }
+.wk:not(.wk-phone) .mm-d.today .mm-n { background: #fff; }
+.wk:not(.wk-phone) .mm-tip { display: none; }
+.wk:not(.wk-phone) .wk-side .pg-h { font-size: 12px; text-transform: uppercase; letter-spacing: .4px; color: var(--muted); }
+.wk:not(.wk-phone) .wk-side > .faint.small { display: none; }
+.wk:not(.wk-phone) .wk-task.side { padding: 5px 8px; border-radius: 6px; font-size: 12px; box-shadow: none; border-left: 3px solid var(--tint); background: color-mix(in srgb, var(--tint) 14%, var(--bg-side)); }
+.wk:not(.wk-phone) .wk-task.side b, .wk:not(.wk-phone) .wk-task.side .wk-tt { font-size: 12px; font-weight: 500; }
+.wk:not(.wk-phone) .wk-wait { gap: 4px; }
+.wk:not(.wk-phone) .wk-dh.ap, .wk:not(.wk-phone) .wk-corner:not(.wk-adc) { height: 38px; box-sizing: border-box; }
+.wk:not(.wk-phone) .wk-corner.wk-adc, .wk:not(.wk-phone) .wk-allday { position: sticky; top: 38px; z-index: 4; border-bottom: 1px solid var(--border); max-height: 96px; overflow-y: auto; }
+.wk:not(.wk-phone) .wk-allday.we { background: color-mix(in srgb, var(--hover) 60%, var(--bg)); }
+.wk:not(.wk-phone) .wk-dh.ap.we, .wk:not(.wk-phone) .wk-allday.we { background: linear-gradient(color-mix(in srgb, var(--hover) 60%, transparent), color-mix(in srgb, var(--hover) 60%, transparent)), var(--bg); }
+.wk:not(.wk-phone) .wk-corner.wk-adc, .wk:not(.wk-phone) .wk-allday { z-index: 20; }
+.wk:not(.wk-phone) .wk-dh.ap, .wk:not(.wk-phone) .wk-corner:not(.wk-adc) { z-index: 21; }
+.wk-phone .wk-dh, .wk-phone .wk-corner { z-index: 21; }
