@@ -190,3 +190,12 @@ html.lk-blur body { filter: blur(24px); }
 .lock-box .row { flex-wrap: wrap; }
 @media (prefers-color-scheme: dark) { #lockScreen { background: var(--bg, #1c1c1e); color: var(--text, #eee); } }
 .lk-ask .lk-pad button:last-child { background: none; }
+
+/* bigger text sizes: dialogs, menus and the to-do sheet stay inside the screen (they're zoomed by --ts) */
+body.web .modal { width: calc((100vw - 24px) / var(--ts, 1)) !important; max-height: calc((100dvh - 40px - env(safe-area-inset-top)) / var(--ts, 1)); overscroll-behavior: contain; }
+body.web .ctx { left: calc(8px / var(--ts, 1)) !important; right: auto !important; width: calc((100vw - 16px) / var(--ts, 1)) !important; max-width: none !important; bottom: calc((8px + env(safe-area-inset-bottom)) / var(--ts, 1)) !important; max-height: calc(72dvh / var(--ts, 1)); }
+body.web .popover { max-width: calc((100vw - 16px) / var(--ts, 1)); }
+body.web.sheet-open .task.open { overflow-x: hidden; }
+body.web .task.open .e-chips { flex-wrap: wrap; } body.web .task.open .e-chips .chip { max-width: 100%; white-space: normal; }
+body.web .modal .row { flex-wrap: wrap; }
+body.web .p2-hours { flex-wrap: nowrap; } body.web .p2-hours .field { min-width: 0; flex: 1; }

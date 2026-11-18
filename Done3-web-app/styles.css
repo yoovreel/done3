@@ -975,3 +975,8 @@ body.web .ac-row { min-height: 44px; font-size: 15.5px; }
 .yr-big { font-size: 20px; font-weight: 750; color: color-mix(in srgb, var(--c) 60%, var(--text)); overflow-wrap: anywhere; } .yr-l { font-size: 12.5px; font-weight: 600; margin-top: 2px; } .yr-s { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
 .yr-months { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; height: 110px; align-items: end; padding: 10px; background: var(--hover); border-radius: 16px; }
 .yr-m { display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; } .yr-m i { width: 100%; border-radius: 6px 6px 3px 3px; background: color-mix(in srgb, #8b7cf6 55%, transparent); } .yr-m.top i { background: linear-gradient(#ec6fae, #f59e5b); } .yr-m span { font-size: 10px; color: var(--muted); }
+.wk-hl.near-now span { visibility: hidden; }
+.wk-dl span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.wk:not(.wk-phone) .wk-allday { max-height: none; overflow: visible; }
+.p2-row input[type=checkbox], .plan-row input[type=checkbox] { accent-color: var(--tint, var(--accent)); width: 16px; height: 16px; }
+[data-theme="dark"] .bcard .cb:not(.on) { background: transparent; }
