@@ -199,3 +199,11 @@ body.web.sheet-open .task.open { overflow-x: hidden; }
 body.web .task.open .e-chips { flex-wrap: wrap; } body.web .task.open .e-chips .chip { max-width: 100%; white-space: normal; }
 body.web .modal .row { flex-wrap: wrap; }
 body.web .p2-hours { flex-wrap: nowrap; } body.web .p2-hours .field { min-width: 0; flex: 1; }
+
+/* keep the page still: no sideways drifting like a canvas. Only real horizontal strips (tags, goals, board, calendar) scroll sideways */
+html:has(body.web), body.web { overflow: hidden; width: 100%; height: 100%; overscroll-behavior: none; touch-action: pan-y; }
+body.web #app, body.web #pane { overflow: hidden; max-width: 100vw; }
+body.web #main { overflow-x: hidden; overscroll-behavior-x: none; touch-action: pan-y; scrollbar-gutter: auto; }
+body.web #main .content { max-width: 100%; overflow-x: clip; }
+body.web .tagbar, body.web .goal-strip, body.web .cd-strip, body.web .board, body.web .habits, body.web .wk-side, body.web .p2-wrap { touch-action: pan-x pan-y; overscroll-behavior-x: contain; }
+body.web #sbList { overflow-x: hidden; touch-action: pan-y; }
