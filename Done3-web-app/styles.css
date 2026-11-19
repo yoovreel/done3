@@ -1193,3 +1193,4 @@ html.playful .content[data-view="today"] .h-sub { margin-left: 2px; }
 html.playful .task.has-time .t-time { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; flex: none; min-width: 64px; padding-left: 12px; margin-left: 4px; border-left: 1px solid var(--border); align-self: stretch; color: var(--text); }
 html.playful .t-time span svg { width: 14px; height: 14px; color: var(--text-2); } html.playful .t-time b { font-size: 12px; font-weight: 700; white-space: nowrap; } html.playful .t-time small { font-size: 11px; color: var(--muted); }
 html.playful .task.has-time .meta .m-bell { display: none; }
+html.playful .tagbar { padding: 4px !important; margin-bottom: 14px; align-items: center; } html.playful body.web .tagbar { display: flex; }
