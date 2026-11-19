@@ -1235,3 +1235,15 @@ html.playful .tagbar { padding: 4px !important; margin-bottom: 14px; align-items
 .tl-empty { color: var(--muted); font-size: 13.5px; padding: 8px 0 8px 92px; }
 .tl-add { padding-left: 92px; }
 .tl-row.past .tl-card:not(.next) { opacity: .7; } .tl-row.past .tl-card.done { opacity: .5; }
+/* Playful on the Mac too: each to-do on its own soft card, and a floating dark toolbar */
+html.playful body:not(.web) .content:not(.wide) .section { background: transparent; padding: 0; border-radius: 0; margin-bottom: 18px; }
+html.playful body:not(.web) .section .task { background: var(--card); border-radius: 18px; padding: 12px 14px 12px 12px; margin: 0 0 8px; min-height: 54px; }
+html.playful body:not(.web) .section .task::after { display: none; }
+html.playful body:not(.web) .section .task:hover { box-shadow: 0 2px 10px rgba(0,0,0,.06); }
+html.playful body:not(.web) .task.sel { border-radius: 18px; background: color-mix(in srgb, var(--accent) 12%, var(--card)); }
+html.playful body:not(.web) #bottom { position: absolute; left: 50%; transform: translateX(-50%); bottom: 16px; border: none; border-radius: 22px; padding: 6px 14px; gap: 14px; background: rgba(23,23,28,.92); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); box-shadow: 0 10px 30px rgba(0,0,0,.22); z-index: 20; }
+html.playful body:not(.web) #bottom .icon-btn { color: #fff; } html.playful body:not(.web) #bottom .icon-btn:hover:not(:disabled) { background: rgba(255,255,255,.14); color: #fff; }
+html.playful body:not(.web) #bottom .magic-plus { background: #fff; color: #17171C; border-radius: 12px; }
+html.playful[data-theme="dark"] body:not(.web) #bottom { background: rgba(255,255,255,.94); } html.playful[data-theme="dark"] body:not(.web) #bottom .icon-btn { color: #111; } html.playful[data-theme="dark"] body:not(.web) #bottom .magic-plus { background: #111; color: #fff; }
+html.playful body:not(.web) #pane { position: relative; }
+html.playful body:not(.web) #main .content { padding-bottom: 110px; }
