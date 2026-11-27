@@ -210,30 +210,40 @@ body.web #sbList { overflow-x: hidden; touch-action: pan-y; }
 
 /* playful iPhone: each to-do on its own soft card, and a floating dark tab bar */
 @media (max-width: 700px) {
-  html.playful body.web .content:not(.wide) .section { background: transparent; padding: 0; border-radius: 0; margin-bottom: 14px; }
-  html.playful body.web .section .task { background: var(--card); border-radius: 18px; padding: 13px 12px 13px 12px; margin: 0 0 8px; min-height: 56px; }
-  html.playful body.web .section .task::after { display: none; }
-  html.playful body.web .section .sec-title { padding: 6px 4px 8px; }
-  html.playful body.web .task.sel { border-radius: 18px; }
-  html.playful body.web #bottom { left: 50%; right: auto; transform: translateX(-50%); bottom: calc(10px + env(safe-area-inset-bottom)); width: min(300px, calc(100vw - 32px)); border-radius: 26px; padding: 8px 10px; background: rgba(23,23,28,.94); -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px); border: none; box-shadow: 0 10px 30px rgba(0,0,0,.25); justify-content: space-around; }
-  html.playful body.web #bottom .icon-btn { color: #fff; min-width: 46px; height: 42px; border-radius: 15px; }
-  html.playful body.web #bottom .icon-btn svg { width: 22px; height: 22px; }
-  html.playful body.web #bottom .magic-plus { background: #fff !important; color: #17171C !important; border-radius: 16px !important; width: 46px !important; height: 42px !important; flex: 0 0 46px !important; min-width: 46px !important; }
-  html.playful[data-theme="dark"] body.web #bottom { background: rgba(255,255,255,.95); } html.playful[data-theme="dark"] body.web #bottom .icon-btn { color: #111; } html.playful[data-theme="dark"] body.web #bottom .magic-plus { background: #111 !important; color: #fff !important; }
-  html.playful body.web #main .content { padding-bottom: 110px; }
-  html.playful body.web .tw-day b { width: 44px; height: 44px; }
 }
-html.apple body.web .cb { border-radius: 50% !important; width: 22px; height: 22px; }
 /* Studio on the iPhone: grey page, white rounded groups, black floating bar */
-html.studio body.web { --bg: #f2f1ee; }
-html.studio[data-theme="dark"] body.web { --bg: #0e0e10; }
-html.studio body.web #main, html.studio body.web #pane, html.studio body.web #sidebar { background: var(--bg); }
 @media (max-width: 700px) {
-  html.studio body.web .content:not(.wide) .section { background: var(--card); border-radius: 14px; border: 1px solid var(--border); padding: 2px 4px 2px 10px; margin-bottom: 14px; }
-  html.studio body.web .section .task:last-of-type::after { display: none; }
-  html.studio body.web #bottom { left: 50%; right: auto; transform: translateX(-50%); bottom: calc(10px + env(safe-area-inset-bottom)); width: min(280px, calc(100vw - 32px)); border-radius: 18px; padding: 6px 10px; background: #18181b; border: none; box-shadow: 0 10px 30px rgba(0,0,0,.25); justify-content: space-around; }
-  html.studio body.web #bottom .icon-btn { color: #e4e4e7; }
-  html.studio body.web #bottom .magic-plus { background: #fff !important; color: #18181b !important; border-radius: 12px !important; width: 44px !important; height: 40px !important; flex: 0 0 44px !important; min-width: 44px !important; }
-  html.studio[data-theme="dark"] body.web #bottom { background: #f4f4f5; } html.studio[data-theme="dark"] body.web #bottom .icon-btn { color: #18181b; } html.studio[data-theme="dark"] body.web #bottom .magic-plus { background: #18181b !important; color: #fff !important; }
-  html.studio body.web #main .content { padding-bottom: 100px; }
+}
+
+/* ===================== the one look on iPhone (Things-style) ===================== */
+@media (max-width: 760px) {
+  body.web { font-size: 16px; }
+  body.web .hdr h1 { font-size: 30px; }
+  body.web .task { padding: 10px 6px; gap: 13px; min-height: 46px; }
+  body.web .task .title { font-size: 17px; line-height: 1.3; }
+  body.web .meta { font-size: 13px; margin-top: 2px; }
+  body.web .cb { width: 21px; height: 21px; border-radius: 5.5px; border-width: 1.5px; margin-top: 1px; }
+  body.web .cb.on::after { left: 6.5px; top: 2.5px; width: 5px; height: 10px; }
+  body.web .sec-title.heading { font-size: 19px; padding: 26px 4px 9px; }
+  body.web .sec-title.heading .icon-btn { opacity: 1; }
+  body.web .section.day > .sec-title { font-size: 20px; padding-top: 26px; }
+  body.web .section.day > .sec-title .big { font-size: 36px; }
+  body.web .section.day > .sec-title::after { top: 14px; }
+  /* round buttons at the top, like Things */
+  body.web #sbToggle { border-radius: 50%; background: var(--card); box-shadow: 0 0 0 .5px var(--border), 0 2px 8px rgba(0,0,0,.06); }
+  body.web .vtools .pill, body.web .hdr .pill { background: transparent; border: 1px solid var(--border); }
+  /* bottom bar: quiet, with a big floating blue + on the right */
+  body.web #bottom { border-top: none; background: color-mix(in srgb, var(--bg) 82%, transparent); }
+  body.web #bottom .magic-plus { order: 9; flex: 0 0 58px; width: 58px; height: 58px; min-width: 58px; margin-top: -26px; box-shadow: 0 8px 22px color-mix(in srgb, var(--accent) 45%, transparent), 0 2px 6px rgba(0,0,0,.12); }
+  body.web #bottom .magic-plus svg { width: 26px; height: 26px; }
+  body.web .task.open { border-radius: 16px; padding: 16px 16px 12px; }
+  body.web .e-done { border-radius: 999px; padding: 8px 22px; font-weight: 600; }
+  body.web .modal { border-radius: 20px; }
+}
+@media (max-width: 760px) {
+  body.web .task.open .e-title { font-size: 20px; font-weight: 500; }
+  body.web .e-notes { font-size: 16px; }
+  body.web .e-check input { font-size: 17px; }
+  body.web .ccb { width: 18px; height: 18px; border-width: 2px; }
+  body.web .ccb.on::after { left: 5px; top: 1px; width: 5px; height: 10px; border-width: 0 2px 2px 0; }
 }
