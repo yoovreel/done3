@@ -1222,43 +1222,12 @@ html[data-theme="dark"] .gc-pace.ok, html[data-theme="dark"] .gc-pace.won { colo
 .e-check input { border-bottom-color: var(--border); }
 .task.open .e-title { font-size: 16px; font-weight: 500; }
 
-/* ===================== Liquid Glass + motion ===================== */
+/* ===================== motion helpers (minimal look; no glass) ===================== */
 :root { --spring: cubic-bezier(.34, 1.4, .64, 1); --ease-out: cubic-bezier(.2, .8, .2, 1);
-  --glass: rgba(255,255,255,.58); --glass-strong: rgba(255,255,255,.74); --glass-edge: rgba(255,255,255,.75); --glass-line: rgba(20,24,32,.10);
-  --glass-shadow: 0 10px 34px rgba(20,24,32,.13), 0 1px 3px rgba(20,24,32,.07); --glass-blur: blur(24px) saturate(185%); }
-[data-theme="dark"] { --glass: rgba(42,45,52,.52); --glass-strong: rgba(46,49,56,.72); --glass-edge: rgba(255,255,255,.16); --glass-line: rgba(255,255,255,.09);
-  --glass-shadow: 0 12px 38px rgba(0,0,0,.5), 0 1px 3px rgba(0,0,0,.3); }
-/* the glass recipe: frosted, slightly tinted, a bright rim on top and a soft shadow underneath */
-.popover, .ctx, #toast, .tour-card {
-  background: var(--glass-strong) !important; -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
-  box-shadow: inset 0 1px 0 var(--glass-edge), inset 0 0 0 .5px var(--glass-line), var(--glass-shadow) !important; border: none !important; }
-.popover, .ctx { border-radius: 16px !important; }
-#toast { border-radius: 999px !important; color: var(--text) !important; }
-#toast button { color: var(--accent) !important; }
-/* springy pop-ins */
-.popover, .ctx { animation: glass-pop .26s var(--spring) both; transform-origin: top center; }
-.modal { animation: glass-pop .3s var(--spring) both; }
-#toast { transition: opacity .22s ease, transform .42s var(--spring) !important; }
-@keyframes glass-pop { from { opacity: 0; transform: scale(.94) translateY(-4px); } to { opacity: 1; transform: none; } }
-@keyframes toast-up { from { opacity: 0; transform: translate(-50%, 18px) scale(.96); } to { opacity: 1; transform: translate(-50%, 0); } }
-/* switching lists: the page glides in, rows follow one after another */
-.content.view-in .hdr { animation: rise .34s var(--ease-out) both; }
-.content.view-in .section { animation: rise .42s var(--ease-out) both; }
-.content.view-in .section:nth-of-type(2) { animation-delay: .03s; } .content.view-in .section:nth-of-type(3) { animation-delay: .06s; }
-.content.view-in .section:nth-of-type(4) { animation-delay: .09s; } .content.view-in .section:nth-of-type(n+5) { animation-delay: .12s; }
-.content.view-in .task:nth-child(-n+12) { animation: rise .4s var(--ease-out) both; }
-.content.view-in .task:nth-child(2) { animation-delay: .02s; } .content.view-in .task:nth-child(3) { animation-delay: .04s; } .content.view-in .task:nth-child(4) { animation-delay: .06s; }
-.content.view-in .task:nth-child(5) { animation-delay: .08s; } .content.view-in .task:nth-child(6) { animation-delay: .1s; } .content.view-in .task:nth-child(7) { animation-delay: .12s; }
-.content.view-in .task:nth-child(n+8) { animation-delay: .14s; }
+  --glass: var(--card); --glass-strong: var(--card); --glass-edge: transparent; --glass-line: var(--border);
+  --glass-shadow: 0 8px 28px rgba(20,24,32,.12); --glass-blur: none; }
+[data-theme="dark"] { --glass-shadow: 0 10px 32px rgba(0,0,0,.45); }
 @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-/* ticking a to-do: the box pops, a ring ripples out, the row eases away */
-.task.just .cb.on { animation: cb-pop .42s var(--spring); }
-.task.just .cb.on::before { content: ""; position: absolute; inset: -2px; border-radius: inherit; border: 2px solid var(--accent); animation: cb-ring .55s var(--ease-out) forwards; pointer-events: none; }
-@keyframes cb-ring { from { opacity: .7; transform: scale(1); } to { opacity: 0; transform: scale(2.2); } }
-.task.just .title .tx { background: linear-gradient(currentColor, currentColor) 0 55% / 0 1.2px no-repeat; animation: strike .35s .08s var(--ease-out) forwards; }
-/* the open to-do grows out of its row */
-.task.open { animation: card-open .3s var(--spring) both; }
-@keyframes card-open { from { opacity: .6; transform: scale(.97); } to { opacity: 1; transform: none; } }
 /* dragging a to-do on a touch screen: it hangs off your finger */
 body .task.touch-hang, body.web .task.touch-hang { position: fixed !important; left: 0 !important; top: 0 !important; box-sizing: border-box; z-index: 9999; pointer-events: none; margin: 0 !important;
   background: var(--card) !important; border-radius: 14px; padding: 10px 14px !important;
@@ -1271,7 +1240,4 @@ body .task.touch-hang, body.web .task.touch-hang { position: fixed !important; l
 body.touch-dragging .task { transition: transform .2s var(--ease-out); }
 body.touch-dragging .task.drop-before { transform: translateY(10px); }
 body.touch-dragging .task.drop-after { transform: translateY(-10px); }
-/* everything you press gives a little */
-.pill, .btn, .icon-btn, .sb-row, .seg button { transition: transform .18s var(--spring), background-color .15s, color .15s; }
-.pill:active, .btn:active, .icon-btn:active, .sb-row:active { transform: scale(.95); }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-delay: 0s !important; transition-duration: .01ms !important; } }
