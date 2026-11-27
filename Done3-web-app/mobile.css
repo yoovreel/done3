@@ -247,3 +247,19 @@ body.web #sbList { overflow-x: hidden; touch-action: pan-y; }
   body.web .ccb { width: 18px; height: 18px; border-width: 2px; }
   body.web .ccb.on::after { left: 5px; top: 1px; width: 5px; height: 10px; border-width: 0 2px 2px 0; }
 }
+
+/* voice capture: hold + to speak */
+.voice-ov { position: fixed; inset: 0; z-index: 80; display: flex; align-items: flex-end; justify-content: center; padding: 0 16px calc(110px + env(safe-area-inset-bottom)); background: color-mix(in srgb, var(--bg) 35%, rgba(0,0,0,.28)); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: vo-in .18s ease-out; pointer-events: none; }
+.voice-ov.closing { opacity: 0; transition: opacity .18s; }
+.vo-card { width: min(100%, 420px); background: var(--card); border-radius: 22px; box-shadow: var(--card-shadow); padding: 18px 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.vo-text { font-size: 19px; line-height: 1.35; text-align: center; color: var(--muted); min-height: 26px; }
+.voice-ov.heard .vo-text { color: var(--text); }
+.vo-hint { font-size: 12.5px; color: var(--muted); }
+.voice-ov.cancel .vo-card { box-shadow: 0 0 0 2px #e5484d, var(--card-shadow); }
+.voice-ov.cancel .vo-hint { color: #e5484d; }
+.vo-wave { display: flex; gap: 5px; align-items: center; height: 26px; }
+.vo-wave i { width: 5px; border-radius: 3px; background: var(--accent); animation: vo-bar 0.9s ease-in-out infinite; }
+.vo-wave i:nth-child(1) { animation-delay: -.4s; } .vo-wave i:nth-child(2) { animation-delay: -.2s; } .vo-wave i:nth-child(3) { animation-delay: 0s; } .vo-wave i:nth-child(4) { animation-delay: -.3s; } .vo-wave i:nth-child(5) { animation-delay: -.1s; }
+@keyframes vo-bar { 0%, 100% { height: 6px; } 50% { height: 24px; } }
+@keyframes vo-in { from { opacity: 0; } to { opacity: 1; } }
+body.web #bottom .magic-plus { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
