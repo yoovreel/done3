@@ -323,3 +323,7 @@ body.web #bottom .magic-plus { -webkit-user-select: none; user-select: none; -we
 .qf-row.more { color: var(--muted); } .qf-row.more .qf-ic { color: var(--muted); }
 /* iPhone: no search bar or search button: pull a list down for Quick Find */
 @media (max-width: 760px) { body.web .top-search { display: none !important; } body.web .pane-top { justify-content: space-between; } }
+/* the sync line in the sidebar: tap it to sync now */
+@media (max-width: 760px) { body.web .sync-line { font-size: 13px; padding: 8px 16px; display: flex; align-items: center; gap: 6px; }
+  body.web .sync-line:not(.err)::after { content: "↻"; font-size: 14px; color: var(--accent); }
+  body.web .sync-line:active { opacity: .6; } }
